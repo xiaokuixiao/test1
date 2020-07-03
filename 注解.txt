@@ -1,0 +1,44 @@
+    @Async     异步任务，在方法上添加，可以立即回复编写异步任务
+@Async 给任务方法添加该注解
+@EnableAsync 启用异步注解主方法任务
+@EnableScheduling  主方法类添加定时任务
+ @Scheduled定时方法类上添加在写的方法上 
+\pm110201912090demo\src\main\resources\application.yml  和 application.perprotes  都是配置文件  具有相同的作用，一个项目只能用其中一种
+@ConfigurationProperties(prefix = "person")   加载这个类型的属性
+@Data      
+@Component  把类注入spring容器
+@Autowired  获取Spring容器对应的类
+实体类中的数据类型都用基本类型的包装类
+Byte  取值范围  -128-127
+@Value(("#{5*4}"))  stpl表达式
+判断  @Validated加在类上不为空    属性上加 @NotEmpty(message = "lasname不允许为空")  来判断不为空
+@PropertySource("classpath:p3.properties")  指定配置文件的类
+@ImportResource(locations = {"classpath:bean.xml"})  用来引入xml文件
+@Configuration   设置为主配置类，类升级为配置类
+@Bean  把方法注入到spring容器中
+@Profile()设置运行环境   测试环境  生产环境
+@Conditiona。。。判断符合条件去加载类   可以去百度查询具体含义
+@Slf4j  日志的注解  
+ @CrossOrigin(allowCredentials = "true")  解决跨域问题  允许cookie发送到
+springcloud  hitry @EnableCircuitBreaker//开启服务降级 
+java  -jar  --spring.congfig.location =G/application.properties
+ http://www.slf4j.org/官网
+http://localhost:8080/webjars/jquery/3.4.1/jquery.js   jquery
+
+@Configuration //配置类 实例化放到spring ioc容器中
+@NoArgsConstructor //无参构造
+@AllArgsConstructor//有参构造
+spring.thymeleaf.cache=false   设置idea的缓存清理，就不用总是启用tomcat了
+spring.mvc.date-format=yyyy-MM-dd  设置接收到的时间日期格式
+spring.mvc.hiddenmethod.filter.enabled=true
+logging.level.root=debug   设置日志的级别
+logging.pattern.file=%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread]     %-5level     
+%logger{50} - %msg%n   修改文件中的日志格式
+logging.pattern.console=%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n  修改控制台输出的格式
+logging.file.name=D:/log11.log  设置存放日志路径和名称
+logging.file.path=D:/  设置log路径 
+ @NotEmpty(message = "姓名必须填")  返回json数据的
+ @Column(updatable = false)@org.hibernate.annotations.CreationTimestamp   创建时间  不能自动生成
+ @Column(name="update_time") @org.hibernate.annotations.UpdateTimestamp  更新时间 不能自动生成
+ jdbc:mysql://localhost:3308/pm10?useUnicode=true&serverTimezone=CTT  mysql时区不对时候
+ (@RequestBody List<String >  productIdList){  把数据转换成list格式  必须用post请求
